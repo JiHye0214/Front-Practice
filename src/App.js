@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {RouterProvider} from "react-router-dom"
+import { ThemeProvider } from "styled-components";
+
+import test123 from "./routes/route";
+import theme from "./styles/theme"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={test123} />
+    </ThemeProvider>
   );
+
+  /*
+    v5
+    원래 이렇게 되는데 저게 더 편하지?
+    <Routes>
+      <Route path="/" eleent={<div>Hello, word!</div>} />
+      <Route />
+    </Routes>
+  */
 }
 
 export default App;
