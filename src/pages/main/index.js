@@ -5,25 +5,32 @@ import { flexCenter } from "../../styles/common";
 import TDButton from "../../components/button";
 import { useState } from "react";
 
+import Details from "./components/detail";
+import Modal from "./components/modal";
+
 const MainPage = () => {
     // 배열은 이 함수 안에다가 
-    const [numState, setState] = useState("menu-1");
+    const [numState, setState] = useState("1");
     const menuArray = [
         {
             title: "1",
-            isSelected : numState === "1"
+            isSelected : numState === "1",
+            label : "one"
         },
         {
             title: "2",
-            isSelected : numState === "2"
+            isSelected : numState === "2",
+            label : "two"
         },
         {
             title: "3",
-            isSelected : numState === "3"
+            isSelected : numState === "3",
+            label : "three"
         },
         {
             title: "4",
-            isSelected : numState === "4"
+            isSelected : numState === "4",
+            label : "four"
         },
     ]
 
@@ -37,15 +44,17 @@ const MainPage = () => {
             <h1>Mainpage</h1>
             <Container>
                 <Header>
-                    {menuArray.map(({isSelected, title}) => (
+                    {menuArray.map(({isSelected, title, label}) => (
                         <Tab $isSelected={isSelected} onClick={() => onClickTab(title)}>
-                            {title}
+                            {label}
                         </Tab>
                     ))}
                 </Header>
+                {/* 모달창 만들어야지 */}
+                <Details numState={numState}/>
+                <Modal opacity={"default"}/>
             </Container>
-
-            <TDButton variant={"primary"} size={"small"}>
+            <TDButton variant={"primary"} size={"medium"}>
                 버튼
             </TDButton>
         </Wrapper>

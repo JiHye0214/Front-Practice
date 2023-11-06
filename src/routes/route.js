@@ -9,12 +9,12 @@ import TodoPage from "../pages/todo";
 const router = createBrowserRouter([
   // RouteObject --> 배열형태
   {
-    path: "/",
+    path: "",
     element: <RootLayout />,
     // RouteObject --> 배열형태
     children: [
       {
-        path: "/home",
+        path: "",
         element: <HomePage />,
       },
       {

@@ -31,10 +31,13 @@ const variantCSS = {
 
 const sizeCSS = {
   small: css`
-    width: 250px;
-    height: 50px;;
+    width: 150px;
+    height: 30px;;
     `,
-  medium: css``,
+  medium: css`
+  width: 250px;
+  height: 50px;;
+  `,
   full: css`
     width: 100%;
     aspect-ratio: 8 / 1; // 종횡비 가로 8 세로 1
@@ -48,7 +51,7 @@ const shapeCSS = {
     border-radius: 8px;
   `,
   round: css`
-    border-radius: 50%;
+    border-radius: 15px;
   `,
 };
 
