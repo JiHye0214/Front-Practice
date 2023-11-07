@@ -1,13 +1,12 @@
-import styled from "styled-components"
-import TDButton from "../../../components/button";
+import {styled,css} from "styled-components"
 import { flexCenter } from "../../../styles/common";
 
-const Modal = ({ opacity }) => {
+const Modal = ({ isPageNum2, opacity }) => {
     
     return (
         <Wrapper>
             <h1>모달창입니다</h1>
-            <button className="mainModal" >창 닫기</button>
+            <button>창 닫기</button>
         </Wrapper>
     )
 }
@@ -15,15 +14,14 @@ const Modal = ({ opacity }) => {
 export default Modal;
 
 const opacityCSS = {
-    default : css`opacity: 1;`,
-    invisible : css`opacity: 0;`,
+    default : css`display:none`,
+    visible : css`display:block`,
 }
 
 const Wrapper = styled.div`
     height: calc(100% - 50px);
-    z-index: 0;
     ${flexCenter}
-    background-color: rgba(224,224,224,0.5);
+    background-color: rgba(214, 218, 255, 0.7);
     ${({opacity}) => opacityCSS[opacity]}
 `
 

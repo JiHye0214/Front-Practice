@@ -14,6 +14,6 @@ export default PageBTN
 
 const Wrapper = styled.div`
   height: 50px;
-  background-color: pink;
+  background-color: #8a94eb;
   ${flexCenter}
 `;

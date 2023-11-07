@@ -50,9 +50,13 @@ const MainPage = () => {
                         </Tab>
                     ))}
                 </Header>
-                {/* 모달창 만들어야지 */}
-                <Details numState={numState}/>
-                <Modal opacity={"default"}/>
+                <Section>
+                    {/* 모달창 만들어야지 */}
+                    {menuArray.map(({isSelected, title, label}) => (
+                            title==="1" && <Modal opacity={"default"}/>
+                        ))}
+                    <Details numState={numState}/>
+                </Section>
             </Container>
             <TDButton variant={"primary"} size={"medium"}>
                 버튼
@@ -92,4 +96,8 @@ const Tab = styled.div`
     &:hover{
         cursor: pointer;
     }
+`
+
+const Section = styled.div`
+    height: calc(100% - 50px);
 `
