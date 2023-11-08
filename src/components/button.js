@@ -61,6 +61,7 @@ const Button = styled.button`
   ${({ shape }) => shapeCSS[shape]}
   cursor: pointer;
   border: none;
+  margin-top: 20px;
   &:hover {
     opacity: 0.7;
   }

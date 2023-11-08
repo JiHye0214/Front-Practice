@@ -20,13 +20,16 @@ const Details = ({numState}) => {
             <Aa/>
         </Wrapper>
     )
-
 }
 
 export default Details;
 
 const Wrapper = styled.div`
-    background-color: #c2eef2;
-    height: calc(100% - 50px);
+    background-color: #f8ffe3;
+    height: 100%;
+    width: 100%;
     ${flexCenter}
+    position: absolute;
+    font-size: 25px;
+    font-weight: 600;
 `
