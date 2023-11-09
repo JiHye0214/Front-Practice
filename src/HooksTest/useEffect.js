@@ -11,7 +11,7 @@ const EffectTest = () => {
 
     return (
         <Wrapper>
-            <Button onClick={()=>onClickTimer()}>타이머 보이기</Button>
+            <Button onClick={()=>onClickTimer()}>{isOpenTimer ? "타이머 숨기기" : "타이머 보이기"}</Button>
             {isOpenTimer ? <Timer/> : null }
         </Wrapper>
     )

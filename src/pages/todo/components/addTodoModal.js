@@ -3,29 +3,25 @@ import TDButton from "../../../components/button";
 import { flexAlignCetner, flexCenter } from "../../../styles/common";
 
 const AddTodoModal = () => {
-
-    return(
-        <Styled.Modal>
-            <Styled.Form>
-                <Styled.Title>
-                    <h1>ADD TODO LIST</h1>
-                    <button type='button'> x </button>
-                </Styled.Title>
-                <Styled.Content>
-                    <input placeholder="제목을 입력해주세요"/>
-                    <textarea placeholder="할 일을 입력해주세요"/>
-                </Styled.Content>
-                <TDButton 
-                    variant={'primary'}                
-                    size={'full'}
-                >
-                    ADD
-                </TDButton>
-            </Styled.Form>
-        </Styled.Modal>
-    )
-}
-export default AddTodoModal
+  return (
+    <Styled.Modal>
+      <Styled.Form>
+        <Styled.Title>
+          <h1>ADD TODO LIST</h1>
+          <TDButton> x </TDButton>
+        </Styled.Title>
+        <Styled.Content>
+          <input placeholder="제목을 입력해주세요" />
+          <textarea placeholder="할 일을 입력해주세요" />
+        </Styled.Content>
+        <TDButton variant={"primary"} size={"full"}>
+          ADD
+        </TDButton>
+      </Styled.Form>
+    </Styled.Modal>
+  );
+};
+export default AddTodoModal;
 
 const Modal = styled.div`
   position: fixed;
