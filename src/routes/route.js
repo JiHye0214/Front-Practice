@@ -9,6 +9,7 @@ import TodoPage from "../pages/todo";
 import StateTest from "../HooksTest/useState";
 import RefTest from "../HooksTest/useRef";
 import EffectTest from "../HooksTest/useEffect";
+import InputState from "../HooksTest/input";
 
 const router = createBrowserRouter([
   // RouteObject --> 배열형태
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/effect",
     element: <EffectTest/>
+  },
+  {
+    path: "/input",
+    element: <InputState/>
   },
 ]);
 
