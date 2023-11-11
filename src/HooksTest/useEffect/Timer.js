@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const Timer = () => {
     const [count, setCount] = useState(0);
-    const [seconds, setSeconds] = useState(0);
-    const [minutes, setMinutes] = useState(0);
-    const [hours, setHours] = useState(0);
+    // const [seconds, setSeconds] = useState(0);
+    // const [minutes, setMinutes] = useState(0);
+    // const [hours, setHours] = useState(0);
     const [start, setStart] = useState(true);
+
+    const seconds = useRef(0);
+    const minutes = useRef(0);
+    const hours = useRef(0);
 
     // useEffect(()=>{
     //     return() => {
@@ -18,18 +22,22 @@ const Timer = () => {
     useEffect(() => {
         start && setCount(count + 1)
         if(count === 14000){
-            setSeconds(seconds + 1)
+            seconds.current += 1
             setCount(0);
         }
-        if(seconds === 60){
-            setMinutes(minutes + 1)
-            setSeconds(0);
+        },[count])
+
+        if(count === 14000){
+            seconds.current += 1
         }
-        if(minutes === 60){
-            setHours(hours + 1)
-            setMinutes(0)
+        if(seconds.current === 60){
+            minutes.current += 1
+            seconds.current = 0
         }
-    },[count])
+        if(minutes.current === 60){
+            hours.current += 1
+            minutes.current = 0
+        }
 
     const onClickStop = () => {
         setStart(false)
@@ -44,9 +52,9 @@ const Timer = () => {
     const onClickReset = () => {
         setStart(false)
         setCount(0)
-        setSeconds(0)
-        setMinutes(0)
-        setHours(0)
+        seconds.current = 0
+        minutes.current = 0
+        hours.current = 0
     }
 
     return (
@@ -58,7 +66,12 @@ const Timer = () => {
                 <Button onClick={onClickRestart}>재시작</Button>
                 <Button onClick={onClickReset}>리셋</Button>
             </Container>
-            <h2>{hours} : {minutes} : {seconds}</h2>
+            {/* <h2>{hours} : {minutes} : {seconds}</h2> */}
+            <Section>
+                <h2 ref={seconds}>{seconds.current} : </h2>
+                <h2 ref={minutes}>{minutes.current} : </h2>
+                <h2 ref={hours}>{hours.current}</h2>
+            </Section>
         </Wrapper>
     )
 }
@@ -81,3 +94,8 @@ const Container = styled.div`
 const Button = styled.button`
     margin: 10px;
 `;
+
+const Section = styled.div`
+    display: flex;
+    padding: 10px;
+`

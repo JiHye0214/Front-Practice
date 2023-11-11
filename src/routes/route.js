@@ -10,6 +10,8 @@ import StateTest from "../HooksTest/useState";
 import RefTest from "../HooksTest/useRef";
 import EffectTest from "../HooksTest/useEffect";
 import InputState from "../HooksTest/input";
+import Test from "../HooksTest/test";
+
 
 const router = createBrowserRouter([
   // RouteObject --> 배열형태
@@ -47,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/input",
     element: <InputState/>
+  },
+  {
+    path: "/test",
+    element: <Test/>
   },
 ]);
 
