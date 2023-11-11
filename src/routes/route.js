@@ -10,7 +10,8 @@ import StateTest from "../HooksTest/useState";
 import RefTest from "../HooksTest/useRef";
 import EffectTest from "../HooksTest/useEffect";
 import InputState from "../HooksTest/input";
-import Test from "../HooksTest/test";
+import Test from "../HooksTest/useRef2";
+import InputMdf from "../HooksTest/inputMdf";
 
 
 const router = createBrowserRouter([
@@ -51,8 +52,12 @@ const router = createBrowserRouter([
     element: <InputState/>
   },
   {
-    path: "/test",
+    path: "/ref2",
     element: <Test/>
+  },
+  {
+    path: "/input-mdf",
+    element: <InputMdf/>
   },
 ]);
 
