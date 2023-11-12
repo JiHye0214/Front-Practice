@@ -1,0 +1,70 @@
+react 
+
+⭐ 모달창 닫기 구현
+
+1. close 함수 만들기(useState)
+2. 모달태그에 함수가 담긴 매개변수(이름은 내맘) 전달
+	* 그냥 함수 전달 가능 (vscode참고)
+
+3. 모달 컴포넌트 파라미터에 {props} 적기
+4. 모달 컴포넌트 창닫기 버튼에 onClose = { props}
+
+
+⭐ todo 추가 구현
+
+1. addtodo 함수 구현 
+	title, content 전달 
+	todo배열 양식에 맞는 하나의 객체 생성
+		* 전달 안 해 준 key(id, state ..)들은 정해줘야 함
+	setTodos에 이전배열과 만든 객체 추가
+2. 모달태그에 함수 전달
+
+3. 모달 컴포넌트 파라미터에 함수 전달 
+4. 모달 컴포넌트에 todo 추가 후 창 닫는 함수 생성
+	* form action 기능 삭제하는 함수 필수
+	* addtodo 함수 필수 - 파라미터 전달 자세히!
+	* 창닫는 함수 필수
+5. 모달 컴포넌트 onSubmit에 4번함수 넣기
+	* onSubmit 함수의 value 생각하기
+	* onSubmit 함수의 value가 구현되려면 어디에 어떤 파라미터를 전달해야 할까?
+
+⭐ todo 삭제 구현
+
+1. handleDeleteTodo 함수 구현
+	삭제하고 싶은 todo의 id 전달
+	걔만 빼고 나머지 저장
+	setTodos 
+2. TodoList 태그 파라미터 전달 -> oneTodo 태그 파라미터 전달 
+
+3. oneTodo confirm 보여주고 삭제하는 함수 만들기
+	handleDeleteTodo 함수 필수
+4. oneTodo button onClick에 함수 넣기
+
+⭐ todo 수정 구현
+1. handleEditTodo 함수 구현
+	id, todo 전달
+	todo 복사배열 저장
+	원하는 todo id의 index 저장(findIndex)
+	복사배열 수정 * 원하는 데이터만 수정하고 싶으니까 덮어씌우기 하자
+	setTodos
+2. TodoList 태그 파라미터 전달 -> oneTodo 태그 파라미터 전달 
+
+3. oneTodo edit useState생성
+
+1️⃣ content
+1. 수정 button onClick 함수 생성
+	edit state false면 true로 반환
+	handleEditTodo에 todo.id, {원하는 key : 원하는 value} <-- 원하는 value가 뭔지 생각
+		* useRef 
+		edit state ture면 입력창, false면 컨텐트 
+		입력창에 ref 넣기
+	edit state false로 다시 바꾸기
+
+2️⃣ 완료/미완료
+1. div onClick 함수 생성
+	* 누르면 완료 -> 미완료 / 미완료 -> 완료
+	handleEditTodo에 todo.id, {원하는 key : 원하는 value}
+	* toggle느낌이니까 state를 바꿔야겠지?
+2. div onClick 함수 넣기
+
+
